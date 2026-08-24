@@ -1,0 +1,38 @@
+generated: '2026-08-23'
+method: probed
+source: live probes of https://latigobio.com/.well-known/* on 2026-08-23
+hosts:
+- host: latigobio.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 202
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 202
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 202
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 202
+    file: null
+  - path: /.well-known/api-catalog
+    status: 202
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 202
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 202
+    file: null
+  - path: /.well-known/agent.json
+    status: 202
+    file: null
+notes: >-
+  Every path on latigobio.com answers HTTP 202 with an identical 180-200 byte SiteGround
+  robot-challenge shell (<meta http-equiv="refresh" content="0;/.well-known/sgcaptcha/...">),
+  not a document. The 202 is a catch-all challenge, not a served /.well-known/ resource, so
+  NO WellKnown, APICatalog or SecurityTxt pointer is emitted from this probe — recording one
+  would credit Latigo with a surface it does not serve. Re-probed with browser, Googlebot and
+  curl user-agents; all three receive the same challenge.
+result: no-documents-served

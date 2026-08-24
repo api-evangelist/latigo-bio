@@ -1,10 +1,21 @@
 aid: latigo-bio
 name: Latigo Bio
-description: 'Latigo Bio is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Latigo Biotherapeutics, Inc. ("Latigo Bio") is a clinical-stage biotechnology
+  company headquartered in Thousand Oaks, California, developing novel non-opioid medicines
+  for acute and chronic pain. Its lead candidates LTG-001 and LTG-321 are oral NaV1.8
+  sodium-channel inhibitors targeting pain at its peripheral source without the addiction
+  risk of opioids; LTG-001 holds FDA Fast Track designation and reported positive Phase 2b
+  results in post-abdominoplasty acute pain, published in the New England Journal of
+  Medicine in July 2026. The company was founded on human-genetics-validated targets and
+  uses in-house AI/ML and structure-based drug design to optimize potency and selectivity.
+  It debuted in 2024 with a $135M Series A and closed a $150M Series B in March 2025, backed
+  by Westlake Village BioPartners, 5AM Ventures, Foresite Capital and Corner Ventures.
+  Latigo is a therapeutics developer, not a software vendor: it publishes no public API,
+  developer portal, SDK or machine-readable specification.'
 url: https://raw.githubusercontent.com/api-evangelist/latigo-bio/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
+x-harvest-listing: https://forgeglobal.com/latigo-bio_stock/
 x-tier: stub
 x-tier-reason: harvest
 specificationVersion: '0.20'
@@ -12,6 +23,14 @@ created: '2026-08-23'
 modified: '2026-08-23'
 tags:
 - Company
+- Biotechnology
+- Pharmaceuticals
+- Life Sciences
+- Drug Discovery
+- Clinical Trials
+- Healthcare
+- Pain Management
+- Therapeutics
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +38,36 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/latigo-bio-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/latigo-bio_stock/
+  url: https://latigobio.com/
+- type: TermsOfService
+  url: https://latigobio.com/terms-of-use/
+- type: PrivacyPolicy
+  url: https://latigobio.com/privacy-policy/
+x-enrichment:
+  date: '2026-08-23'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Latigo Biotherapeutics is a clinical-stage drug developer whose product is a molecule
+    (oral NaV1.8 inhibitors LTG-001/LTG-321), not software — it runs no developer program:
+    api., developer., docs., dev., portal., app. and data.latigobio.com are all NXDOMAIN,
+    github.com/latigobio and /LatigoBiotherapeutics 404, and the corporate site itself sits
+    behind a SiteGround robot challenge that answers HTTP 202 with an identical challenge
+    shell to every path, including all eight /.well-known/* probes.
+  evidence:
+  - url: https://latigobio.com/openapi.json
+    status: 202
+  - url: https://latigobio.com/.well-known/agent-card.json
+    status: 202
+  - url: https://github.com/latigobio
+    status: 404
+  - url: https://registry.npmjs.org/latigobio
+    status: 404
+  checked: '2026-08-23'
